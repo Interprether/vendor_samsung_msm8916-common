@@ -20,6 +20,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libutils", "libcutils", "libqmi_cci", "libqmi_common_so", "libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -37,6 +38,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libutils", "libcutils", "libqmi_cci", "libqmi_common_so", "libqmiservices", "libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -54,6 +56,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libhidlbase", "libhidltransport", "libhwbinder", "liblog", "libutils", "libcutils", "libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -71,6 +74,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["liblog", "libcutils", "libui", "libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -88,6 +92,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -105,6 +110,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -122,6 +128,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libcutils", "libc++"],
 }
 
 cc_prebuilt_library_shared {
@@ -139,6 +146,7 @@ cc_prebuilt_library_shared {
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
+			shared_libs: ["libcutils", "libc++"],
 }
 
 android_app_import {
@@ -151,3 +159,1599 @@ android_app_import {
 	},
 }
 
+cc_prebuilt_binary {
+	name: "adsprpcd",
+	srcs: ["proprietary/vendor/bin/adsprpcd"],
+	strip: {
+		none: true,
+	},
+	vendor: true,
+	shared_libs: ["libadsprpc", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "diag_mdlog",
+	srcs: ["proprietary/vendor/bin/diag_mdlog"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libdiag", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "btnvtool",
+	srcs: ["proprietary/vendor/bin/btnvtool"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libbtnv", "libqmiservices", "libqmi_cci", "liblog", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "fmconfig",
+	srcs: ["proprietary/vendor/bin/fmconfig"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "diag_uart_log",
+	srcs: ["proprietary/vendor/bin/diag_uart_log"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libdiag", "liblog", "libnetutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "ftm_ptt",
+	srcs: ["proprietary/vendor/bin/ftm_ptt"],
+	strip: { none: true },
+	vendor: true,
+	allow_undefined_symbols: true,
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "fm_qsoc_patches",
+	srcs: ["proprietary/vendor/bin/fm_qsoc_patches"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libqmi", "libqmi_cci", "libqmiservices", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "hci_qcomm_init",
+	srcs: ["proprietary/vendor/bin/hci_qcomm_init"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libbtnv", "libqmiservices", "libqmi_cci", "liblog", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "irsc_util",
+	srcs: ["proprietary/vendor/bin/irsc_util"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "loc_launcher",
+	srcs: ["proprietary/vendor/bin/loc_launcher"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libutils", "libcutils", "libsecnativefeature", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "mm_qcamera_daemon",
+	srcs: ["proprietary/vendor/bin/mm-qcamera-daemon"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "liboemcamera", "libmmcamera2_stats_modules", "libmmcamera2_iface_modules", "libmmcamera2_isp_modules", "libmmcamera2_sensor_modules", "libmmcamera2_pproc_modules", "libmmcamera2_imglib_modules", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "port_bridge",
+	srcs: ["proprietary/vendor/bin/port-bridge"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "netmgrd",
+	srcs: ["proprietary/vendor/bin/netmgrd"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libdsutils", "libconfigdb", "libdiag", "libcutils", "liblog", "libnetutils", "libnetmgr", "libqmi", "libqmiservices", "libqmi_cci", "libqmi_common_so", "libqmi_client_qmux", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "qmuxd",
+	srcs: ["proprietary/vendor/bin/qmuxd"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libconfigdb", "libcutils", "libdiag", "libdsutils", "liblog", "libqmi"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "ptt_socket_app",
+	srcs: ["proprietary/vendor/bin/ptt_socket_app"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libutils", "libcutils", "libdiag", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "qcom_system_daemon",
+	srcs: ["proprietary/vendor/bin/qcom-system-daemon"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "libutils", "libdiag", "libxml2", "libsubsystem_control", "libqmi_common_so", "libqmi_cci", "libqmi_encdec", "libqmiservices", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "ssr_diag",
+	srcs: ["proprietary/vendor/bin/ssr_diag"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libdiag", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "subsystem_ramdump",
+	srcs: ["proprietary/vendor/bin/subsystem_ramdump"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libmdmdetect", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "time_daemon",
+	srcs: ["proprietary/vendor/bin/time_daemon"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "libqmi_cci", "libqmi_common_so", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "rmt_storage",
+	srcs: ["proprietary/vendor/bin/rmt_storage"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libqmi_csi", "libqmi_common_so", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "ssr_setup",
+	srcs: ["proprietary/vendor/bin/ssr_setup"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "libutils", "libmdmdetect", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "radish",
+	srcs: ["proprietary/vendor/bin/radish"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "wdsdaemon",
+	srcs: ["proprietary/vendor/bin/wdsdaemon"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libdiag", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "thermal_engine",
+	srcs: ["proprietary/vendor/bin/thermal-engine"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libcutils", "libqmi_cci", "libqmi_common_so", "libthermalioctl"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+	name: "wlandutservice",
+	srcs: ["proprietary/vendor/bin/wlandutservice"],
+	strip: { none: true },
+	vendor: true,
+	shared_libs: ["libbinder", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "eglSubDriverAndroid",
+	srcs: ["proprietary/vendor/lib/egl/eglSubDriverAndroid.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libESXEGL_adreno", "libcutils", "libgsl", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "eglsubAndroid",
+	srcs: ["proprietary/vendor/lib/egl/eglsubAndroid.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libui", "libRBEGL_adreno", "libsync", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdrmprplugin",
+	srcs: ["proprietary/vendor/lib/drm/libdrmprplugin.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libbinder", "libutils", "libcutils", "libz", "libQSEEComAPI", "libtzplayready", "libdrmframework", "libc++"],
+	relative_install_path: "drm",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdrmwvmplugin",
+	srcs: ["proprietary/vendor/lib/drm/libdrmwvmplugin.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libbinder", "libutils", "libcutils", "liblog", "libz", "libwvdrm_L1", "libWVStreamControlAPI_L1", "libQSEEComAPI", "libc++"],
+	relative_install_path: "drm",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libEGL_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libEGL_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libESXEGL_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libESXEGL_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libadreno_utils", "libgsl", "libz", "liblog", "libcutils", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libGLESv1_CM_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libGLESv1_CM_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libadreno_utils", "libgsl", "libEGL_adreno", "libcutils", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libQTapGLES",
+	srcs: ["proprietary/vendor/lib/egl/libQTapGLES.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libz", "libcutils", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libGLESv2_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libGLESv2_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libadreno_utils", "libgsl", "libEGL_adreno", "libcutils", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libESXGLESv1_CM_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libESXGLESv1_CM_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libRBEGL_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libRBEGL_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libadreno_utils", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libESXGLESv2_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libESXGLESv2_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libadreno_utils", "libgsl", "libz", "liblog", "libllvm-glnext", "libcutils", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libRBGLESv2_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libRBGLESv2_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libadreno_utils", "libsc-a3xx", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libRBGLESv1_CM_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libRBGLESv1_CM_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libq3dtools_adreno",
+	srcs: ["proprietary/vendor/lib/egl/libq3dtools_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libc++"],
+	relative_install_path: "egl",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "flp.default",
+	srcs: ["proprietary/vendor/lib/hw/flp.default.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libizat_core", "libgeofence", "liblbs_core", "libflp", "libc++"],
+	relative_install_path: "hw",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libCB",
+	srcs: ["proprietary/vendor/lib/libCB.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libgsl", "libutils", "libui", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.fm@1.0-impl",
+	srcs: ["proprietary/vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libbase", "libcutils", "libhidlbase", "libhidltransport", "liblog", "libhwbinder", "libutils", "vendor.qti.hardware.fm@1.0_vendor", "libc++"],
+	relative_install_path: "hw",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libC2D2",
+	srcs: ["proprietary/vendor/lib/libC2D2.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libExtendedExtractor",
+	srcs: ["proprietary/vendor/lib/libExtendedExtractor.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libstagefright", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libI420colorconvert",
+	srcs: ["proprietary/vendor/lib/libI420colorconvert.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libmm-color-convertor", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libOmxAacDec",
+	srcs: ["proprietary/vendor/lib/libOmxAacDec.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libFlacSwDec",
+	srcs: ["proprietary/vendor/lib/libFlacSwDec.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libOmxEvrcDec",
+	srcs: ["proprietary/vendor/lib/libOmxEvrcDec.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libOmxQcelp13Dec",
+	srcs: ["proprietary/vendor/lib/libOmxQcelp13Dec.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libOpenCL",
+	srcs: ["proprietary/vendor/lib/libOpenCL.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libCB", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libadiertac",
+	srcs: ["proprietary/vendor/lib/libadiertac.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "liblog", "libaudcal", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libacdbloader",
+	srcs: ["proprietary/vendor/lib/libacdbloader.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "liblog", "libaudcal", "libtinyalsa", "libacdbrtac", "libadiertac", "libacdb-fts", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libacdb-fts",
+	srcs: ["proprietary/vendor/lib/libacdb-fts.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "liblog", "libaudcal", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libacdbmapper",
+	srcs: ["proprietary/vendor/lib/libacdbmapper.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "liblog", "libaudioalsa", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libSubSystemShutdown",
+	srcs: ["proprietary/vendor/lib/libSubSystemShutdown.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libandroid_runtime", "libnativehelper", "libsubsystem_control", "libcutils", "libmdmdetect", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libacdbrtac",
+	srcs: ["proprietary/vendor/lib/libacdbrtac.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "liblog", "libaudcal", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libRSDriver_adreno",
+	srcs: ["proprietary/vendor/lib/libRSDriver_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libRS", "libRSCpuRef", "libRS_internal", "liblog", "libcutils", "libutils", "libEGL", "libGLESv1_CM", "libGLESv2", "libbcinfo", "libui", "libgui", "libsync", "libz", "librs_adreno", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libOmxVdecHevc",
+	srcs: ["proprietary/vendor/lib/libOmxVdecHevc.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libutils", "libbinder", "libcutils", "libHevcSwDecoder", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libTimeService",
+	srcs: ["proprietary/vendor/lib/libTimeService.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libtime_genoff", "libutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libWVStreamControlAPI_L1",
+	srcs: ["proprietary/vendor/lib/libWVStreamControlAPI_L1.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libz", "libc++", "libnetutils"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libadreno_utils",
+	srcs: ["proprietary/vendor/lib/libadreno_utils.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libbccQTI",
+	srcs: ["proprietary/vendor/lib/libbccQTI.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libaptX_encoder",
+	srcs: ["proprietary/vendor/lib/libaptX_encoder.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libaptXHD_encoder",
+	srcs: ["proprietary/vendor/lib/libaptXHD_encoder.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libatparser",
+	srcs: ["proprietary/vendor/lib/libatparser.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libaudio-ril",
+	srcs: ["proprietary/vendor/lib/libaudio-ril.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libaudcal",
+	srcs: ["proprietary/vendor/lib/libaudcal.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libdiag", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libadsprpc",
+	srcs: ["proprietary/vendor/lib/libadsprpc.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libc2d30-a4xx",
+	srcs: ["proprietary/vendor/lib/libc2d30-a4xx.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libc2d30-a3xx",
+	srcs: ["proprietary/vendor/lib/libc2d30-a3xx.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libcordon",
+	srcs: ["proprietary/vendor/lib/libcordon.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libcutils", "libssl", "libcrypto"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libconfigdb",
+	srcs: ["proprietary/vendor/lib/libconfigdb.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libxml", "libdsutils", "libdiag", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdisp-aba",
+	srcs: ["proprietary/vendor/lib/libdisp-aba.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdrmdecrypt",
+	srcs: ["proprietary/vendor/lib/libdrmdecrypt.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libstagefright_foundation", "liblog", "libQSEEComAPI", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdrmfs",
+	srcs: ["proprietary/vendor/lib/libdrmfs.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libdiag", "liblog", "libQSEEComAPI", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libfactoryutil",
+	srcs: ["proprietary/vendor/lib/libfactoryutil.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libflp",
+	srcs: ["proprietary/vendor/lib/libflp.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libizat_core", "libgeofence", "liblbs_core", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgdmcprov",
+	srcs: ["proprietary/vendor/lib/libgdmcprov.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++", "liblog"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libedmnativehelper",
+	srcs: ["proprietary/vendor/lib/libedmnativehelper.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "libbinder", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgsl",
+	srcs: ["proprietary/vendor/lib/libgsl.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "liblog", "libz", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libhdcp2",
+	srcs: ["proprietary/vendor/lib/libhdcp2.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libQSEEComAPI", "libcutils", "liblog"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgeofence",
+	srcs: ["proprietary/vendor/lib/libgeofence.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libizat_core", "liblbs_core", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libexifa",
+	srcs: ["proprietary/vendor/lib/libexifa.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdrmtime",
+	srcs: ["proprietary/vendor/lib/libdrmtime.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libdiag", "liblog", "libQSEEComAPI", "libtime_genoff", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libhwdaphal",
+	srcs: ["proprietary/vendor/lib/libhwdaphal.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjpega",
+	srcs: ["proprietary/vendor/lib/libjpega.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libexifa", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libfastcvopt",
+	srcs: ["proprietary/vendor/lib/libfastcvopt.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libizat_core",
+	srcs: ["proprietary/vendor/lib/libizat_core.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libloc_api_v02", "libsqlite", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-disp-apis",
+	srcs: ["proprietary/vendor/lib/libmm-disp-apis.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libcutils", "libmm-abl", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libllvm-qcom",
+	srcs: ["proprietary/vendor/lib/libllvm-qcom.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmdmdetect",
+	srcs: ["proprietary/vendor/lib/libmdmdetect.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-als",
+	srcs: ["proprietary/vendor/lib/libmm-als.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libandroid", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libllvm-glnext",
+	srcs: ["proprietary/vendor/lib/libllvm-glnext.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-abl-oem",
+	srcs: ["proprietary/vendor/lib/libmm-abl-oem.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-color-convertor",
+	srcs: ["proprietary/vendor/lib/libmm-color-convertor.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjpegehw",
+	srcs: ["proprietary/vendor/lib/libjpegehw.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmQSM",
+	srcs: ["proprietary/vendor/lib/libmmQSM.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libsqlite", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjpegdhw",
+	srcs: ["proprietary/vendor/lib/libjpegdhw.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-qdcm",
+	srcs: ["proprietary/vendor/lib/libmm-qdcm.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libcutils", "libpowermanager", "libbinder", "libutils", "libtinyxml", "libmm-abl", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblbs_core",
+	srcs: ["proprietary/vendor/lib/liblbs_core.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libizat_core", "libcrypto", "libsqlite", "libloc_api_v02", "libmdmdetect", "libperipheral_client", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-abl",
+	srcs: ["proprietary/vendor/lib/libmm-abl.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libmm-abl-oem", "libcutils", "libdiag", "libpowermanager", "libbinder", "libutils", "libtinyxml", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmm-hdcpmgr",
+	srcs: ["proprietary/vendor/lib/libmm-hdcpmgr.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblistensoundmodel2",
+	srcs: ["proprietary/vendor/lib/liblistensoundmodel2.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_faceproc",
+	srcs: ["proprietary/vendor/lib/libmmcamera_faceproc.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmcamera_interface",
+	srcs: ["proprietary/vendor/lib/libmmcamera_interface.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmrtpdecoder",
+	srcs: ["proprietary/vendor/lib/libmmrtpdecoder.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libcutils", "libstagefright", "libstagefright_foundation", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmjpeg_interface",
+	srcs: ["proprietary/vendor/lib/libmmjpeg_interface.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "liblog", "libqomx_core"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmparser",
+	srcs: ["proprietary/vendor/lib/libmmparser.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libstagefright", "libbinder", "libutils", "libcutils", "libmedia", "libstagefright_foundation", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libnetmgr",
+	srcs: ["proprietary/vendor/lib/libnetmgr.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libdsutils", "libconfigdb", "libdiag", "libcutils", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libprdrmdecrypt",
+	srcs: ["proprietary/vendor/lib/libprdrmdecrypt.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libbinder", "libutils", "libcutils", "libz", "libQSEEComAPI", "libtzplayready", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libplayready_v2.5",
+	srcs: ["proprietary/vendor/lib/libplayready_v2.5.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "liboemcrypto",
+	srcs: ["proprietary/vendor/lib/liboemcrypto.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libQSEEComAPI", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libomission_avoidance",
+	srcs: ["proprietary/vendor/lib/libomission_avoidance.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libfactoryutil", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libperipheral_client",
+	srcs: ["proprietary/vendor/lib/libperipheral_client.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "libbinder", "libmdmdetect", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqomx_core",
+	srcs: ["proprietary/vendor/lib/libqomx_core.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqomx_jpegdec",
+	srcs: ["proprietary/vendor/lib/libqomx_jpegdec.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libmmqjpeg_codec", "libmmjpeg", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "librpmb",
+	srcs: ["proprietary/vendor/lib/librpmb.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libQSEEComAPI", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libril-qcril-hook-oem",
+	srcs: ["proprietary/vendor/lib/libril-qcril-hook-oem.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libutils", "libdiag", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsecnativefeature",
+	srcs: ["proprietary/vendor/lib/libsecnativefeature.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libexpat", "libcutils", "libz", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "librs_adreno",
+	srcs: ["proprietary/vendor/lib/librs_adreno.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libcutils", "libCB", "libz", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libscve",
+	srcs: ["proprietary/vendor/lib/libscve.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libfastcvopt", "libscve_mv", "libcutils", "libOpenCL", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libseckeyprov",
+	srcs: ["proprietary/vendor/lib/libseckeyprov.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libQSEEComAPI", "libcrypto", "liblog"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsc-a2xx",
+	srcs: ["proprietary/vendor/lib/libsc-a2xx.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "librs_adreno_sha1",
+	srcs: ["proprietary/vendor/lib/librs_adreno_sha1.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libscale",
+	srcs: ["proprietary/vendor/lib/libscale.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsd_sdk_display",
+	srcs: ["proprietary/vendor/lib/libsd_sdk_display.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libutils", "libmm-disp-apis", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomx263dsw",
+	srcs: ["proprietary/vendor/lib/libsomx263dsw.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libstagefright_foundation", "liblog", "libsomxcore", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libscve_mv",
+	srcs: ["proprietary/vendor/lib/libscve_mv.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["liblog", "libstagefright", "libmedia", "libbinder", "libutils", "libfastcvopt", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsc-a3xx",
+	srcs: ["proprietary/vendor/lib/libsc-a3xx.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libgsl", "libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxaacd",
+	srcs: ["proprietary/vendor/lib/libsomxaacd.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libstagefright_foundation", "liblog", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxaace",
+	srcs: ["proprietary/vendor/lib/libsomxaace.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxcore",
+	srcs: ["proprietary/vendor/lib/libsomxcore.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libsomxcmn", "libutils", "libstagefright_foundation", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxmp3d",
+	srcs: ["proprietary/vendor/lib/libsomxmp3d.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libssd",
+	srcs: ["proprietary/vendor/lib/libssd.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libdiag", "liblog", "libQSEEComAPI", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxadpcmd",
+	srcs: ["proprietary/vendor/lib/libsomxadpcmd.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxmp4vdsw",
+	srcs: ["proprietary/vendor/lib/libsomxmp4vdsw.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libstagefright_foundation", "liblog", "libsomxcore", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxflacd",
+	srcs: ["proprietary/vendor/lib/libsomxflacd.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxamrd",
+	srcs: ["proprietary/vendor/lib/libsomxamrd.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxhevcdsw",
+	srcs: ["proprietary/vendor/lib/libsomxhevcdsw.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libstagefright_foundation", "liblog", "libsomxcore", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxnaace",
+	srcs: ["proprietary/vendor/lib/libsomxnaace.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "liblog", "libsomxcore", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxvp8d",
+	srcs: ["proprietary/vendor/lib/libsomxvp8d.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libstagefright_foundation", "liblog", "libsomxcore", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libstlport",
+	srcs: ["proprietary/vendor/lib/libstlport.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomx264dsw",
+	srcs: ["proprietary/vendor/lib/libsomx264dsw.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "libstagefright_foundation", "liblog", "libsomxcore", "libsomxcmn", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsomxcmn",
+	srcs: ["proprietary/vendor/lib/libsomxcmn.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libstagefright_foundation", "liblog", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsubsystem_control",
+	srcs: ["proprietary/vendor/lib/libsubsystem_control.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libqmi_cci", "libqmi_common_so", "libmdmdetect", "libperipheral_client", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libthermalclient",
+	srcs: ["proprietary/vendor/lib/libthermalclient.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libtzplayready",
+	srcs: ["proprietary/vendor/lib/libtzplayready.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libQSEEComAPI", "libdrmfs", "libcrypto", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libxml",
+	srcs: ["proprietary/vendor/lib/libxml.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libdiag", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libwvm",
+	srcs: ["proprietary/vendor/lib/libwvm.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libbinder", "libmedia", "libstagefright", "libstagefright_foundation", "libWVStreamControlAPI_L1", "libdrmframework", "libcutils", "liblog", "libutils", "libz", "libQSEEComAPI", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libtzdrmgenprov",
+	srcs: ["proprietary/vendor/lib/libtzdrmgenprov.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libutils", "libcutils", "liblog", "libQSEEComAPI", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libthermalioctl",
+	srcs: ["proprietary/vendor/lib/libthermalioctl.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libwvdrm_L1",
+	srcs: ["proprietary/vendor/lib/libwvdrm_L1.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libWVStreamControlAPI_L1", "libutils", "libcutils", "liblog", "libz", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libprmediadrmdecrypt",
+	srcs: ["proprietary/vendor/lib/mediadrm/libprmediadrmdecrypt.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	relative_install_path: "mediadrm",
+	shared_libs: ["libbinder", "libutils", "libcutils", "libz", "libQSEEComAPI", "libtzplayready", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libprmediadrmplugin",
+	srcs: ["proprietary/vendor/lib/mediadrm/libprmediadrmplugin.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	relative_install_path: "mediadrm",
+	shared_libs: ["libutils", "liblog", "libQSEEComAPI", "libtzplayready", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libwvdrmengine",
+	srcs: ["proprietary/vendor/lib/mediadrm/libwvdrmengine.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	relative_install_path: "mediadrm",
+	shared_libs: ["libcutils", "liblog", "libprotobuf-cpp-lite", "libstagefright_foundation", "libutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqcbassboost",
+	srcs: ["proprietary/vendor/lib/soundfx/libqcbassboost.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	relative_install_path: "soundfx",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqcvirt",
+	srcs: ["proprietary/vendor/lib/soundfx/libqcvirt.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	relative_install_path: "soundfx",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqcreverb",
+	srcs: ["proprietary/vendor/lib/soundfx/libqcreverb.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	relative_install_path: "soundfx",
+	shared_libs: ["libcutils", "libc++"],
+	check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.fm@1.0_vendor",
+	srcs: ["proprietary/vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so"],
+	strip: { none: true },
+	vendor: true,
+	compile_multilib: "32",
+	shared_libs: ["libhidlbase", "libhidltransport", "libhwbinder", "liblog", "libutils", "libcutils", "libc++"],
+	check_elf_files: false,
+}
